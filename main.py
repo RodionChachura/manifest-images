@@ -20,11 +20,11 @@ SIZES = [
 
 get_src = lambda size: 'images/{0}x{0}.png'.format(size)
 
-# with open('images/{0}x{0}.png'.format(START), 'r+b') as f:
-#   with Image.open(f) as image:
-#     for size in SIZES:
-#       cover = resizeimage.resize_cover(image, [size, size])
-#       cover.save(get_src(size), image.format)
+with open('images/{0}x{0}.png'.format(START), 'r+b') as f:
+  with Image.open(f) as image:
+    for size in SIZES:
+      cover = resizeimage.resize_cover(image, [size, size])
+      cover.save(get_src(size), image.format)
 
 sizes_for_manifest = SIZES + [START]
 icons_for_manifest = [
